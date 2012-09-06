@@ -1,0 +1,64 @@
+<?php session_start();?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+<title>客户资料添加 - QQ消息提醒系统</title> 
+<link href="../Public/css/tablecloth/tablecloth.css" rel="stylesheet" type="text/css" media="screen" />
+<link href="../Public/css/css.css" rel="stylesheet" type="text/css" media="screen" />
+<script type="text/javascript" src="../Public/css/tablecloth/tablecloth.js"></script>
+<script>
+function myCheck()
+            {
+               for(var i=0;i<document.apply.elements.length-1;i++)
+               {
+                  if(document.apply.elements[i].value==""||document.apply.elements[i].value=="http://")
+                  {
+                     alert("当前表单不能有空项");
+                     document.apply.elements[i].focus();
+                     return false;
+                  }
+               }
+               return true;
+
+}
+</script>
+</head> 
+<body>
+<div class="main">
+<div class="head"></div>
+<div class="content">
+<div class="left" >
+<include file="Public:left" />
+</div>
+<div class="right">
+<form name="apply"  action="" method="post" onSubmit="return myCheck()"  >
+<table width="100%" border="1">
+  </tr>
+    <tr align="center" >
+    <th colspan="2"><strong>资料添加</strong></th>
+  </tr>
+  <tr>
+    <td>QQ号码</td>
+    <td><input type="text" name="qqnum"  value="{$data.qqnum}" /></td>
+  </tr>
+  <tr>
+    <td>QQ昵称</td>
+    <td><input type="text" name="qqname"  value="{$data.qqname}" /></td>
+  </tr>
+  <tr>
+    <td>真实姓名</td>
+    <td><input type="text" name="realname"  value="{$data.realname}" /></td>
+  </tr>
+    <tr align="center" >
+    <td colspan="2"><input type="submit" value="确认修改"/></td>
+  </tr>
+</table>
+</form>
+</div>
+
+</div>
+<include file="Public:footer" />
+</div>
+</body>
+</html> 
